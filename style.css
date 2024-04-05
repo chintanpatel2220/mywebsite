@@ -75,3 +75,17 @@ body, html {
   font-family: "Reddit Mono", monospace;
   font-size: 3vw;
 }
+
+@media screen and (max-width: 768px) {
+  .title1 {
+    font-size: 5vw; /* Adjust font size for smaller screens */
+  }
+  
+  .title2 {
+    font-size: 8vw; /* Adjust font size for smaller screens */
+  }
+  
+  .title3 {
+    font-size: 6vw; /* Adjust font size for smaller screens */
+  }
+}
