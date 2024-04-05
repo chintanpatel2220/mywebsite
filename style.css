@@ -20,12 +20,11 @@ body, html {
   z-index: 2;
 }
 
-.title {
-  font-size: 48px;
-  color: white;
+.title2 {
+  font-size: 4vw;
+  color: rgb(0, 0, 0);
   margin: 0;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
 }
 
 .social-links {
@@ -40,12 +39,7 @@ body, html {
   color: white;
   text-decoration: none;
   padding: 10px 20px;
-  background-color: #007bff;
   border-radius: 5px;
-}
-
-.social-links a:hover {
-  background-color: #0056b3;
 }
 
 #video-bg {
@@ -59,4 +53,25 @@ body, html {
   height: auto;
   z-index: 1;
   object-fit: cover;
+}
+
+.social-links img {
+  width: 40px;
+}
+
+.title1 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: white;
+  font-family: 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  letter-spacing: 10px;
+  font-size: 2vw;
+}  
+
+.title3{
+  font-family: "Reddit Mono", monospace;
+  font-size: 3vw;
 }
