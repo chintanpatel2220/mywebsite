@@ -1,0 +1,85 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: white; /* Ensure text color is set */
+}
+
+.title {
+  font-size: 48px;
+  color: rgb(0, 0, 0);
+  margin: 0;
+  padding: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-family: "Lucida Sans Unicode", "Lucida Grande";
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+#video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.title2 {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 3.6px;
+  word-spacing: 2.2px;
+  color: #000000;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+}
+
+.title3 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  letter-spacing: 16px;
+  z-index: 2;
+  color: rgb(250, 232, 232); /* Ensure text color is set */
+}
+
+.social-links img {
+ width: 60px;
+}
