@@ -21,10 +21,28 @@
         <a href="https://www.instagram.com/chintanpatelll?igsh=MXB1bzc1NmdvN2Z3Nw%3D%3D&utm_source=qr" target="_blank"><img src="./images/instagram.png"></img></a>
       </div>
     </div>
-    <video autoplay muted loop id="video-bg">
+    <video autoplay muted loop id="video-bg" playsinline preload="none">
       <source src="background-video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+  </div>
+  <div class="contact">
+    <h1 class="title4">Get in touch</h1>
+    <form action="/submit" method="post">
+      <label for="name">First Name:</label>
+      <input type="text" id="name" name="name" placeholder="First Name" required><br><br>
+
+      <label for="name">Last Name:</label>
+      <input type="text" id="name" name="name" placeholder="Last Name"><br><br>
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="example@abc.com" required><br><br>
+  
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+  
+      <input type="submit" value="Submit">
+    </form>
   </div>
 </body>
 </html>
