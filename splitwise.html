@@ -1,6 +1,16 @@
-<div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Split Expenses</title>
+<link rel="stylesheet" href="splitwise.css">
+</head>
+<body>
+<h2>Split Expenses</h2>
+<div class="numOfPeople">
     <label for="numPeople">Number of People:</label>
-    <input type="number" id="numPeople">
+    <input type="number" required id="numPeople" class="input">
     <button onclick="getNames()">Next</button>
 </div>
 <div id="namesInput" style="display: none;">
@@ -10,19 +20,22 @@
 </div>
 <div id="paymentsInput" style="display: none;">
     <h3>Enter Payments:</h3>
-    <table id="paymentsTable">
+    <table id="paymentsTable" style="text-align: center">
         <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Amount</th>
-            <th>Paid By</th>
+            <th class="title">Name</th>
+            <th class="title">Description</th>
+            <th class="title">Amount</th>
+            <th class="title">Paid By</th>
+            <th class="title">Delete</th>
         </tr>
     </table>
     <button onclick="addPaymentRow()">Add Payment</button>
     <button class="calculate-btn" onclick="calculate()">Calculate</button>
-
 </div>
 <div id="result" style="display: none;">
     <h3>Result:</h3>
     <p id="balance"></p>
 </div>
+<script src="index.js"></script>  
+</body>
+</html>
