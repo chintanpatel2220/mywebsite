@@ -1,9 +1,11 @@
 let numPeople;
-    let names = [];
+let names = [];
 
-    function getNames() {
-        numPeople = parseInt(document.getElementById('numPeople').value);
+function getNames() {
+    numPeople = parseInt(document.getElementById('numPeople').value);
+    if (numPeople > 0) {
         document.getElementById('numPeople').disabled = true;
+        document.getElementById('getNames').disabled = true;
 
         let namesInput = document.getElementById('namesInput');
         namesInput.style.display = 'block';
@@ -14,20 +16,22 @@ let numPeople;
         for (let i = 0; i < numPeople; i++) {
             namesDiv.innerHTML += `<input class="input" type="text" placeholder="Name ${i + 1}" id="name${i}">`;
         }
+    } else {
+        alert("Please enter a valid number of people.");
     }
+}
 
-    function getPayments() {
-        for (let i = 0; i < numPeople; i++) {
-            names.push(document.getElementById(`name${i}`).value);
-        }
-        let namesInput = document.getElementById('namesInput');
-        namesInput.style.display = 'none';
-
-        let paymentsInput = document.getElementById('paymentsInput');
-        paymentsInput.style.display = 'block';
-        addPaymentRow();
+function getPayments() {
+    for (let i = 0; i < numPeople; i++) {
+        names.push(document.getElementById(`name${i}`).value);
     }
+    let namesInput = document.getElementById('namesInput');
+    namesInput.style.display = 'none';
 
+    let paymentsInput = document.getElementById('paymentsInput');
+    paymentsInput.style.display = 'block';
+    addPaymentRow();
+}
     function addPaymentRow() {
         let table = document.getElementById('paymentsTable');
         let newRow = table.insertRow(-1);
