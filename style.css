@@ -23,7 +23,7 @@ body, html {
 
 .title2 {
   font-size: 4vw;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   margin: 0;
   padding: 20px;
 }
@@ -72,6 +72,7 @@ body, html {
 .title3 {
   font-family: "Reddit Mono", monospace;
   font-size: 3vw;
+  color: #e8e8e8;
 }
 
 .projects {
@@ -81,7 +82,8 @@ body, html {
 .title4 {
   font-family: "Reddit Mono", monospace;
   font-size: 3vw;
-  padding-bottom: 0%;
+  color: #e8e8e8;
+  margin-bottom: 10px;
 }
 
  /* Media queries for responsiveness */
@@ -97,19 +99,24 @@ body, html {
   .title3 {
     font-size: 5vw;
   }
+  
+  .btn {
+    font-size: 400vw;
+  }
+
 }
 .btn a{
   text-decoration: none;
 }
 
 .btn {
-  color: #090909;
+  color: #000000;
     padding: 0.7em 1.7em;
-    font-size: 18px;
+    font-size: 15px;
     border-radius: 0.5em;
     background: #e8e8e8;
     cursor: pointer;
     border: 1px solid #e8e8e8;
     transition: all 0.3s;
-    margin-top: 10px;
+    margin-bottom: 60px;
 }
