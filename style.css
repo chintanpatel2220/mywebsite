@@ -23,7 +23,7 @@ body, html {
 
 .title2 {
   font-size: 4vw;
-  color: rgb(255, 255, 255);
+  color: white;
   margin: 0;
   padding: 20px;
 }
@@ -72,7 +72,7 @@ body, html {
 .title3 {
   font-family: "Reddit Mono", monospace;
   font-size: 3vw;
-  color: #e8e8e8;
+  color: white;
 }
 
 .projects {
@@ -82,7 +82,7 @@ body, html {
 .title4 {
   font-family: "Reddit Mono", monospace;
   font-size: 3vw;
-  color: #e8e8e8;
+  color: white;
   margin-bottom: 10px;
 }
 
