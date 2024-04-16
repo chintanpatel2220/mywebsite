@@ -19,7 +19,7 @@ html {
   }
   
   .container {
-    background-color: white;
+    background-color: #77B0ED;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -39,45 +39,47 @@ html {
     text-align: center;
   }
   
+  .hidden {
+    display: none;
+  }
+
   .input-section label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     font-weight: bold;
-    color: #333;
+    color: #75b1e9;
   }
   
-  .input-section input[type="number"],
-  .input-section input[type="text"],
-  .input-section select {
+  input, 
+  input[type="number"],
+  input[type="text"],
+  select {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin-bottom: 5px;
+    border: 2px solid #5fc3eb;
+    border-radius: 1rem;
     box-sizing: border-box;
+    text-align: center;
   }
   
   /* Button Styles */
   button {
-    --enhanced-glow-color: rgb(206, 235, 255);
-    --btn-color: rgb(61, 112, 136);
-    border: 0.25em solid var(--glow-color);
-    padding: 1em 3em;
-    color: var(--glow-color);
-    font-size: 15px;
-    font-weight: bold;
-    background-color: var(--btn-color);
-    border-radius: 1em;
-    outline: none;
-    box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 1em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(--glow-color);
-    text-shadow: 0 0 0.5em var(--glow-color);
-    position: relative;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
     transition: all 0.3s;
-    width: 100%;
-    max-width: 300px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   
+  button:hover {
+    background-color: #bcd6f1;
+  }
+
   /* Table Styles */
   table {
     width: 100%;
@@ -90,11 +92,11 @@ html {
     padding: 12px;
     border-bottom: 1px solid #ddd;
     text-align: center;
-    color: #333;
+    color: #000000;
   }
   
   th {
-    background-color: #f2f2f2;
+    background-color: #619ae6;
   }
   
   /* Center Elements in "Enter Names" and "Enter Payments" Sections */
@@ -138,4 +140,39 @@ html {
   .container {
     width: fit-content;
     max-width: 90%;
+  }
+  .result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .result-table th, .result-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .result-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .result-table tr:first-child th:first-child {
+    border-top-left-radius: 5px;
+  }
+  
+  .result-table tr:first-child th:last-child {
+    border-top-right-radius: 5px;
+  }
+  
+  .result-table tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+  }
+  
+  .result-table tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+  }
+  
+  #numPeople{
+    margin-top: 10px;
   }
