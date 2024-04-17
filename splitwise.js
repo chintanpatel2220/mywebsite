@@ -4,7 +4,7 @@ let totalExpense = 0;
 
 function getNames() {
     numPeople = parseInt(document.getElementById('numPeople').value);
-    if (numPeople > 0) {
+    if (numPeople > 1) {
         document.getElementById('numPeople').disabled = true;
         document.getElementById('getNames').disabled = true;
 
@@ -15,14 +15,22 @@ function getNames() {
         namesDiv.innerHTML = '';
 
         for (let i = 0; i < numPeople; i++) {
-            namesDiv.innerHTML += `<input class="input" type="text" placeholder="Name ${i + 1}" id="name${i}">`;
+            namesDiv.innerHTML += `<input class="input" type="text" required placeholder="Name ${i + 1}" id="name${i}">`;
         }
     } else {
-        alert("Please enter a valid number of people.");
+        alert("Please enter a valid number of people. (atleast 2)");
     }
 }
 
 function getPayments() {
+    for (let i = 0; i < numPeople; i++) {
+        let nameInput = document.getElementById(`name${i}`);
+        if (nameInput.value.trim() === '') {
+            alert("Please enter a valid name for all persons.");
+            return;
+        }
+     }
+
     for (let i = 0; i < numPeople; i++) {
         names.push(document.getElementById(`name${i}`).value);
     }
@@ -34,13 +42,21 @@ function getPayments() {
     addPaymentRow();
 }
 
+function validateAmount(input) {
+    let amount = parseFloat(input.value);
+    if (amount < 0.01) {
+        alert("Please enter a valid positive amount.");
+        input.value = ""; // Clear the input field
+    }
+}
+
 function addPaymentRow() {
     let table = document.getElementById('paymentsTable');
     let newRow = table.insertRow(-1);
     newRow.innerHTML = `
         <td style="text-align: center"><select>${names.map(name => `<option>${name}</option>`).join('')}</select></td>
         <td style="text-align: center"><input type="text"></td>
-        <td style="text-align: center"><input type="number" class="paymentAmount"></td>
+        <td style="text-align: center"><input type="number" class="paymentAmount" min="0.01" step="0.01" oninput="validateAmount(this)"></td>
         <td style="text-align: center"><select>${names.map(name => `<option>${name}</option>`).join('')}</select></td>
         <td style="text-align: center"><button onclick="deletePaymentRow(this)">Delete</button></td>
     `;

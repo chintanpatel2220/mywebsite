@@ -12,7 +12,7 @@
   <div class="container">
     <div class="numOfPeople">
       <label for="numPeople">Number of People:</label>
-      <input type="number" required id="numPeople" class="input">
+      <input type="number" required id="numPeople" min="2" class="input">
       <button id="getNames" onclick="getNames()">Next</button>
     </div>
     <div id="namesInput" style="display: none;">
@@ -41,5 +41,6 @@
     </div>
     <button class="exportbtn" style="display: none;" onclick="exportToExcel()" >Export to Excel</button>
   <script src="splitwise.js"></script>
+
 </body>
 </html>
