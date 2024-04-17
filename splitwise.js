@@ -1,5 +1,6 @@
 let numPeople;
 let names = [];
+let totalExpense = 0;
 
 function getNames() {
     numPeople = parseInt(document.getElementById('numPeople').value);
@@ -32,24 +33,56 @@ function getPayments() {
     paymentsInput.style.display = 'block';
     addPaymentRow();
 }
-    function addPaymentRow() {
-        let table = document.getElementById('paymentsTable');
-        let newRow = table.insertRow(-1);
-        newRow.innerHTML = `
-            <td style="text-align: center"><select>${names.map(name => `<option>${name}</option>`).join('')}</select></td>
-            <td style="text-align: center"><input type="text"></td>
-            <td style="text-align: center"><input type="number"></td>
-            <td style="text-align: center"><select>${names.map(name => `<option>${name}</option>`).join('')}</select></td>
-            <td style="text-align: center"><button onclick="deletePaymentRow(this)">Delete</button></td>
-        `;
-    }
+function addPaymentRow() {
+    let table = document.getElementById('paymentsTable');
+    let newRow = table.insertRow(-1);
+    newRow.innerHTML = `
+        <td style="text-align: center"><select>${names.map(name => `<option>${name}</option>`).join('')}</select></td>
+        <td style="text-align: center"><input type="text"></td>
+        <td style="text-align: center"><input type="number" class="paymentAmount"></td>
+        <td style="text-align: center"><select>${names.map(name => `<option>${name}</option>`).join('')}</select></td>
+        <td style="text-align: center"><button onclick="deletePaymentRow(this)">Delete</button></td>
+    `;
 
-    function deletePaymentRow(button) {
-        let row = button.parentNode.parentNode;
-        row.parentNode.removeChild(row);
+    // Update total expense
+    updateTotalExpense();
+}
 
-        calculate();
-    }    
+function deletePaymentRow(button) {
+    let row = button.parentNode.parentNode;
+    let amountDeleted = parseFloat(row.cells[2].querySelector('input').value);
+
+    // Deduct amount from total expense
+    totalExpense -= amountDeleted;
+
+    // Deduct amount from payer's balance
+    let payer = row.cells[3].querySelector('select').value;
+    balance[payer] += amountDeleted;
+
+    row.parentNode.removeChild(row);
+
+    // Update total expense
+    updateTotalExpense();
+}
+
+// Function to update the total expense
+function updateTotalExpense() {
+    totalExpense = 0; // Reset total expense
+    let paymentAmountInputs = document.querySelectorAll('.paymentAmount');
+
+    paymentAmountInputs.forEach(input => {
+        let inputValue = parseFloat(input.value);
+        if (!isNaN(inputValue)) {
+            totalExpense += inputValue;
+        }
+    });
+
+    document.getElementById('totalExpenseDiv').textContent = `Total Expense: £${totalExpense.toFixed(2)}`;
+}
+
+       
+
+
 
     function getPaymentRows() {
         let table = document.getElementById('paymentsTable');
@@ -74,8 +107,7 @@ function getPayments() {
     
     function calculate() {
         let payments = getPaymentRows();
-        console.log("Payments:", payments);
-    
+        numPeople = parseInt(document.getElementById('numPeople').value);
         let totalExpense = 0;
         let balance = {};
     
@@ -87,26 +119,16 @@ function getPayments() {
             balance[payment.paidBy] -= payment.amount; // Deduct payment from payer
         });
     
-        // Calculate total number of people who made payments
-        let numPeopleWithPayments = new Set(payments.map(payment => payment.name)).size;
-        let numPeopleWithoutPayments = numPeople - numPeopleWithPayments;
-    
-        // If there are people who didn't make any payments, distribute the total expense equally among them
-        if (numPeopleWithoutPayments > 0) {
-            let amountPerPersonWithoutPayments = totalExpense / numPeopleWithoutPayments;
-            for (let i = 0; i < numPeople; i++) {
-                let name = document.getElementById(`name${i}`).value;
-                if (!(name in balance)) {
-                    balance[name] = amountPerPersonWithoutPayments;
-                }
-            }
-        }
-    
         let amountPerPerson = totalExpense / numPeople; // Calculate equal share for each person
     
-        // Distribute equal share among all recipients
-        for (let person in balance) {
-            balance[person] += amountPerPerson;
+        // Redistribute equal share among all recipients
+        for (let i = 0; i < numPeople; i++) {
+            let name = document.getElementById(`name${i}`).value;
+            if (name in balance) {
+                balance[name] += amountPerPerson;
+            } else {
+                balance[name] = amountPerPerson;
+            }
         }
     
         let result = '';
@@ -127,21 +149,7 @@ function getPayments() {
     
         document.getElementById('balance').innerHTML = result || 'No balances';
         document.getElementById('result').style.display = 'block';
+        console.log(totalExpense);
+        updateTotalExpense();
     }
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     

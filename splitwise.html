@@ -21,7 +21,7 @@
     </div>
     <div id="paymentsInput" style="display: none;">
       <h3>Enter Payments:</h3>
-      <table id="paymentsTable" style="text-align: center">
+      <table id="paymentsTable" >
         <tr>
           <th class="title">Name</th>
           <th class="title">Description</th>
@@ -30,6 +30,7 @@
           <th class="title">Delete</th>
         </tr>
       </table>
+      <div id="totalExpenseDiv"></div>
       <button onclick="addPaymentRow()">Add Payment</button>
       <button class="calculate-btn" onclick="calculate()">Calculate</button>
     </div>
