@@ -1,122 +1,119 @@
-body, html {
+/* Add this to your existing CSS */
+html,
+body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #d16ba5, #86a8e7, #5ffbf1);
 }
 
 .container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2;
-}
-
-.title2 {
-  font-size: 4vw;
-  color: white;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 90%;
   padding: 20px;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.text {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.projects {
+  margin-bottom: 24px;
+}
+
+.projects .title4 {
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 
 .social-links {
   display: flex;
-  justify-content: center;
-  margin-top: 20px; /* Adjust margin-top to move social links down */
+  align-items: center;
+}
+
+.social-links h1 {
+  font-size: 24px;
+  margin-right: 10px;
 }
 
 .social-links a {
   display: inline-block;
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
-#video-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  object-fit: cover; /* Ensure video fills the container while preserving aspect ratio */
+  margin: 5px;
 }
 
 .social-links img {
-  width: 40px;
+  width: 30px;
+  height: auto;
 }
 
-.title1 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 2;
-  color: white;
-  font-family: 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  letter-spacing: 10px;
-  font-size: 2vw;
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-.title3 {
-  font-family: "Reddit Mono", monospace;
-  font-size: 3vw;
-  color: white;
-}
-
-.projects {
-  text-align: center;
-}
-
-.title4 {
-  font-family: "Reddit Mono", monospace;
-  font-size: 3vw;
-  color: white;
-  margin-bottom: 10px;
-}
-
- /* Media queries for responsiveness */
-@media screen and (max-width: 768px) {
-  .title2 {
-    font-size: 6vw;
+@media (min-width: 768px) {
+  .container {
+    padding: 40px;
   }
 
-  .title1 {
-    font-size: 4vw;
+  .hero-content {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .title3 {
-    font-size: 5vw;
-  }
-  
-  .btn {
-    font-size: 400vw;
+  .text {
+    flex: 1;
+    margin-right: 20px;
   }
 
-}
-.btn a{
-  text-decoration: none;
+  .hero-image {
+    flex: 1;
+  }
 }
 
-.btn {
-  color: #000000;
-    padding: 0.7em 1.7em;
-    font-size: 15px;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    cursor: pointer;
-    border: 1px solid #e8e8e8;
-    transition: all 0.3s;
-    margin-bottom: 60px;
+button {
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #bcd6f1;
 }
