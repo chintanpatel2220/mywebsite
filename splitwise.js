@@ -161,6 +161,10 @@ function calculate() {
 
     document.getElementById('balance').innerHTML = result || 'No balances';
     document.getElementById('result').style.display = 'block';
-    document.querySelector('.exportbtn').style.display = 'block';
+    document.querySelector('.print').style.display = 'block';
     updateTotalExpense();
+}
+
+function printReport() {
+    window.print();
 }
