@@ -177,3 +177,11 @@ html {
   #numPeople{
     margin-top: 10px;
   }
+
+  .exportbtn {
+    color: #60c6e6;
+    padding: 0.5px;
+    width: 100%;
+    max-width: 150px;
+    align-items: center;
+  }

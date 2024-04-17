@@ -33,6 +33,7 @@ function getPayments() {
     paymentsInput.style.display = 'block';
     addPaymentRow();
 }
+
 function addPaymentRow() {
     let table = document.getElementById('paymentsTable');
     let newRow = table.insertRow(-1);
@@ -80,76 +81,70 @@ function updateTotalExpense() {
     document.getElementById('totalExpenseDiv').textContent = `Total Expense: £${totalExpense.toFixed(2)}`;
 }
 
-       
-
-
-
-    function getPaymentRows() {
-        let table = document.getElementById('paymentsTable');
-        let rows = [];
-        for (let i = 1; i < table.rows.length; i++) {
-            let row = table.rows[i];
-            let amountInput = row.cells[2].querySelector('input').value;
-            // Check if amount is a valid number
-            if (!isNaN(amountInput)) {
-                let payment = {
-                    name: row.cells[0].querySelector('select').value,
-                    description: row.cells[1].querySelector('input').value,
-                    amount: parseFloat(amountInput),
-                    paidBy: row.cells[3].querySelector('select').value
-                };
-                rows.push(payment);
-            }
+function getPaymentRows() {
+    let table = document.getElementById('paymentsTable');
+    let rows = [];
+    for (let i = 1; i < table.rows.length; i++) {
+        let row = table.rows[i];
+        let amountInput = row.cells[2].querySelector('input').value;
+        // Check if amount is a valid number
+        if (!isNaN(amountInput)) {
+            let payment = {
+                name: row.cells[0].querySelector('select').value,
+                description: row.cells[1].querySelector('input').value,
+                amount: parseFloat(amountInput),
+                paidBy: row.cells[3].querySelector('select').value
+            };
+            rows.push(payment);
         }
-        return rows;
+    }
+    return rows;
+}
+
+function calculate() {
+    let payments = getPaymentRows();
+    numPeople = parseInt(document.getElementById('numPeople').value);
+    let totalExpense = 0;
+    let balance = {};
+
+    payments.forEach(payment => {
+        totalExpense += payment.amount; // Calculate total expense
+        if (balance[payment.name] === undefined) balance[payment.name] = 0;
+        if (balance[payment.paidBy] === undefined) balance[payment.paidBy] = 0;
+
+        balance[payment.paidBy] -= payment.amount; // Deduct payment from payer
+    });
+
+    let amountPerPerson = totalExpense / numPeople; // Calculate equal share for each person
+
+    // Redistribute equal share among all recipients
+    for (let i = 0; i < numPeople; i++) {
+        let name = document.getElementById(`name${i}`).value;
+        if (name in balance) {
+            balance[name] += amountPerPerson;
+        } else {
+            balance[name] = amountPerPerson;
+        }
     }
 
-    
-    function calculate() {
-        let payments = getPaymentRows();
-        numPeople = parseInt(document.getElementById('numPeople').value);
-        let totalExpense = 0;
-        let balance = {};
-    
-        payments.forEach(payment => {
-            totalExpense += payment.amount; // Calculate total expense
-            if (balance[payment.name] === undefined) balance[payment.name] = 0;
-            if (balance[payment.paidBy] === undefined) balance[payment.paidBy] = 0;
-    
-            balance[payment.paidBy] -= payment.amount; // Deduct payment from payer
-        });
-    
-        let amountPerPerson = totalExpense / numPeople; // Calculate equal share for each person
-    
-        // Redistribute equal share among all recipients
-        for (let i = 0; i < numPeople; i++) {
-            let name = document.getElementById(`name${i}`).value;
-            if (name in balance) {
-                balance[name] += amountPerPerson;
-            } else {
-                balance[name] = amountPerPerson;
-            }
-        }
-    
-        let result = '';
-        let recordedDebts = {}; // To keep track of recorded debts
-    
-        for (let person1 in balance) {
-            for (let person2 in balance) {
-                if (balance[person1] < 0 && balance[person2] > 0 && person1 !== person2) {
-                    let amount = Math.min(Math.abs(balance[person1]), balance[person2]);
-                    let debtKey = person1 < person2 ? `${person1}-${person2}` : `${person2}-${person1}`;
-                    if (!recordedDebts[debtKey]) {
-                        result += `${person1} owes ${person2} £${amount.toFixed(2)}<br>`;
-                        recordedDebts[debtKey] = true; // Mark debt as recorded
-                    }
+    let result = '';
+    let recordedDebts = {}; // To keep track of recorded debts
+
+    for (let person1 in balance) {
+        for (let person2 in balance) {
+            if (balance[person1] < 0 && balance[person2] > 0 && person1 !== person2) {
+                let amount = Math.min(Math.abs(balance[person1]), balance[person2]);
+                let debtKey = person1 < person2 ? `${person1}-${person2}` : `${person2}-${person1}`;
+                if (!recordedDebts[debtKey]) {
+                    result += `${person1} owes ${person2} £${amount.toFixed(2)}<br>`;
+                    recordedDebts[debtKey] = true; // Mark debt as recorded
                 }
             }
         }
-    
-        document.getElementById('balance').innerHTML = result || 'No balances';
-        document.getElementById('result').style.display = 'block';
-        console.log(totalExpense);
-        updateTotalExpense();
     }
-    
+
+    document.getElementById('balance').innerHTML = result || 'No balances';
+    document.getElementById('result').style.display = 'block';
+    document.querySelector('.exportbtn').style.display = 'block';
+    updateTotalExpense();
+}

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Split Expenses</title>
   <link rel="stylesheet" href="splitwise.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
 </head>
 <body>
   <h2>Split Expenses</h2>
@@ -38,7 +39,7 @@
       <h3>Result:</h3>
       <p id="balance"></p>
     </div>
-  </div>
+    <button class="exportbtn" style="display: none;" onclick="exportToExcel()" >Export to Excel</button>
   <script src="splitwise.js"></script>
 </body>
 </html>
