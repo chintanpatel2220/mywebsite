@@ -161,10 +161,13 @@ function calculate() {
 
     document.getElementById('balance').innerHTML = result || 'No balances';
     document.getElementById('result').style.display = 'block';
-    document.querySelector('.print').style.display = 'block';
+    document.querySelector('.savepdf').style.display = 'block';
     updateTotalExpense();
 }
 
-function printReport() {
-    window.print();
+window.onload = function () {
+    document.querySelector('.savepdf').addEventListener("click", () => {
+        const pdf = this.document.querySelector(".container");
+        html2pdf().from(pdf).save();
+    })
 }
