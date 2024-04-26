@@ -203,50 +203,6 @@ body {
 }
 /* Skills section ends */
 
-/* Projects section */
-.projects {
-  background-color: var(--bg-color);
-  padding: 100px 0;
-  margin-top: 2rem;
-}
-
-.project-pic {
-  width: 65%;
-  height: 60%;
-}
-
-.projects-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.projects-title {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.project-container {
-  text-align: center;
-  width: 21.875rem;
-  padding: 1rem;
-}
-
-.project-container p {
-  padding: 0.4rem;
-}
-
-.project-title {
-  margin-bottom: var(--bottom-margin);
-}
-
-.project-details {
-  margin-bottom: var(--bottom-margin);
-}
-
-/* Projects section ends */
-
-
 
 /* Social buttons */
 .socials {
@@ -261,6 +217,43 @@ body {
   height: 3rem;
 }
 /* Social button ends */
+
+/* projects pages */
+.projects {
+  margin-bottom: 24px;
+  background-color: #f8f9fa; /* Change background color */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 10px; /* Add border radius for style */
+  text-align: center; /* Center align content */
+}
+
+.projects .title4 {
+  font-size: 2rem; /* Increase font size */
+  margin-bottom: 20px; /* Add margin for spacing */
+  color: #333; /* Change font color */
+}
+
+.projects .btn-container {
+  display: flex;
+  justify-content: center; /* Center align button */
+}
+
+.projects .btn {
+  padding: 10px 20px;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  font-size: 1rem; /* Button font size */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+  text-decoration: none; /* Remove underline */
+}
+
+.projects .btn:hover {
+  background-color: #0056b3; /* Button background color on hover */
+}
+/* projects pages */
 
 
 /* Footer section */
