@@ -1,34 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>It's me, Chintan</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
-<body>
-  
-    <div class="container">
-        <div class="hero-content">
-            <div class="text">
-                <h1>Hello, I'm Chintan</h1>
-                <p>I'm a passionate web developer who loves to create beautiful and functional websites.</p>
-                <div class="projects">
-                    <h5 class="title4">Projects:</h5>
-                    <a href="splitwise.html"><button class="btn">Splitwise</button></a>
-                </div>
-                <div class="social-links">
-                    <h1 class="title3">Follow me on social</h1>
-                    <a href="https://m.facebook.com/chintan.patel.92102564" target="_blank"><img src="./images/facebook.png" alt="Facebook"></a>
-                    <a href="https://www.instagram.com/chintanpatelll?ig_shid=buz00dh91slf" target="_blank"><img src="./images/instagram.png" alt="Instagram"></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="./chintan.jpeg" alt="Chintan Patel">
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" 
+          type='text/css' 
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+
+    <!--CSS Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="logo.png"
+    />
+    <!-- Animate CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Chintan Patel | Web Developer</title>
+  </head>
+
+  <!--front page html-->
+  <body>
+    <div class="container" id="container">
+      <div class="logo-container">
+        <img src="logo.png" alt="Logo" class="logopage">
+      </div>
+      <div class="text-container">
+        <div class="text-left">
+          <p>Hi <img src="hi.png" class="hi"></p>
+          <p>It's me, Chintan</p>
         </div>
+        <div class="text-right">
+          <p>A Passionate</p>
+          <p>Website Developer</p>
+        </div>
+      </div>
     </div>
- 
-</body>
+
+    <div class="projects">
+        <h5 class="title4">Projects:</h5>
+        <a href="splitwise.html"><button class="btn">Splitwise</button></a>
+    </div>
+    
+    <!-- Social accounts - Fixed to the right -->
+    <div class="socials">
+      <a href="https://m.facebook.com/chintan.patel.92102564" target="_blank"
+        ><img
+          src="./images/facebook.png"
+          alt="Facebook"
+          loading="lazy"
+          class="socicon"
+      /></a>
+      <a href="https://www.instagram.com/chintanpatelll?ig_shid=buz00dh91slf" target="_blank"
+        ><img
+          src="./images/instagram.png"
+          alt="Instagram"
+          loading="lazy"
+          class="socicon"
+      /></a>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+      <p class="copy">&copy; Copyright 2024</p>
+      <p class="copy">Built with &#x2661; by
+        <a href="./index.html" target="_blank">Chintan Patel</a>
+      </p>
+    </footer>
+
+    <!-- Website scripts -->
+    <script src="index.js"></script>
+
+    <!-- Ion icons scripts -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

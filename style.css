@@ -1,119 +1,334 @@
-/* Add this to your existing CSS */
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+
+/*** Variables ***/
+:root {
+  --font-family: "Roboto", sans-serf;
+  --normal-font: 400;
+  --bold-font: 700;
+  --bolder-font: 900;
+  --bg-color: #7e7c7c;
+  --primary-color: #000000;
+  --secondary-color: #000000;
+  --primary-shadow: #000000;
+  --secondary-shadow: #a17a69;
+  --bottom-margin: 0.5rem;
+  --bottom-margin-2: 1rem;
+  --line-height: 1.7rem;
+  --transition: 0.3s;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(45deg, #d16ba5, #86a8e7, #5ffbf1);
+/*** Variables end ****/
+
+/*** logo page css ***/
+
+.hi {
+  width: 50px;
+  mix-blend-mode: color;
+}
+
+.container p {
+  font-size: 50px;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 800px;
-  width: 90%;
-  padding: 20px;
-  background: transparent;
-  border-radius: 10px;
+  position: relative;
+  background-color: #000000;
+  height: 100%;
 }
 
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.text {
+.logo-container {
   text-align: center;
 }
 
-.hero-content h1 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 16px;
+.logopage {
+  max-width: 50rem;
 }
 
-.hero-content p {
-  font-size: 18px;
-  margin-bottom: 24px;
+.text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  color: #ffffff;
 }
 
-.projects {
-  margin-bottom: 24px;
+.text-left,
+.text-right {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 5s ease, transform 3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.projects .title4 {
-  font-size: 24px;
-  margin-bottom: 8px;
+.text-left {
+  text-align: right;
+  transform: translateX(-100%);
 }
 
-.social-links {
+.text-right {
+  transform: translateX(100%);
+}
+
+body.loaded .text-left {
+  transform: translateX(-20%);
+  opacity: 1;
+}
+
+body.loaded .text-right {
+  transform: translateX(20%);
+  opacity: 1;
+}
+
+/* logo page css ends */
+
+.logo {
+  width: 100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+ 
+/* CSS Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 2px solid red; */
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+/* section {
+ max-width: 1100px;
+  margin: auto;
+} */
+
+/* CSS Resets end */
+
+/* Hero section */
+.hero {
+  padding-top: 86px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 68.75rem;
+  margin: auto;
+  padding-bottom: 86px;
 }
 
-.social-links h1 {
-  font-size: 24px;
-  margin-right: 10px;
+.hero img {
+  height: 37.5rem;
+  width: 30.5rem;
 }
 
-.social-links a {
-  display: inline-block;
-  margin: 5px;
+.bio {
+  width: 25rem;
+  padding: 0.625rem;
+  border-radius: 6px;
+  box-shadow: 0px 2px 15px 2px var(--primary-shadow);
 }
 
-.social-links img {
-  width: 30px;
-  height: auto;
+.bio h1 {
+  margin-bottom: var(--bottom-margin);
 }
 
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+.bio p {
+  line-height: var(--line-height);
+  padding: 0.3rem 0;
+}
+/* Hero section ends */
+
+/* More about */
+.more-about {
+  background-color: var(--bg-color);
+  padding: 1rem 6rem;
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding: 40px;
+.more-about h2 {
+  margin-bottom: var(--bottom-margin);
+  text-align: center;
+}
+
+.more-about p {
+  line-height: var(--line-height);
+  padding: 0.4rem;
+}
+/* More about ends */
+
+/* Skills section */
+.skills {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  max-width: 68.75rem;
+  margin: auto;
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.skill-header {
+  margin-bottom: 1rem;
+}
+
+.skills-wrapper img {
+  padding: 1.25rem;
+}
+
+.icon {
+  width: 6.25rem;
+  height: 6.25rem;
+}
+/* Skills section ends */
+
+/* Projects section */
+.projects {
+  background-color: var(--bg-color);
+  padding: 100px 0;
+  margin-top: 2rem;
+}
+
+.project-pic {
+  width: 65%;
+  height: 60%;
+}
+
+.projects-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.project-container {
+  text-align: center;
+  width: 21.875rem;
+  padding: 1rem;
+}
+
+.project-container p {
+  padding: 0.4rem;
+}
+
+.project-title {
+  margin-bottom: var(--bottom-margin);
+}
+
+.project-details {
+  margin-bottom: var(--bottom-margin);
+}
+
+/* Projects section ends */
+
+
+
+/* Social buttons */
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.socicon {
+  width: 3rem;
+  height: 3rem;
+}
+/* Social button ends */
+
+
+/* Footer section */
+footer {
+  background-color: var(--bg-color);
+  padding: 1.25rem;
+  text-align: center;
+  margin: 2rem 0 0;
+}
+/* Footer section ends */
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
-  .hero-content {
-    flex-direction: row;
-    justify-content: space-between;
+  .bio {
+    max-width: 20rem;
   }
 
-  .text {
-    flex: 1;
-    margin-right: 20px;
+  .skills {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
-  .hero-image {
-    flex: 1;
+  .projects {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .projects-container {
+    flex-direction: column;
+  }
+
+  .project-container {
+    width: 100%;
+    margin-bottom: 2rem;
   }
 }
 
-button {
-  color: #090909;
-  padding: 0.7em 1.7em;
-  font-size: 18px;
-  border-radius: 0.5em;
-  background: #e8e8e8;
-  cursor: pointer;
-  border: 1px solid #e8e8e8;
-  transition: all 0.3s;
-  margin-top: 10px;
-}
+@media screen and (max-width: 576px) {
+  .hero {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 
-button:hover {
-  background-color: #bcd6f1;
+  .bio {
+    max-width: 18rem;
+  }
+
+  .more-about {
+    padding: 0.5rem;
+  }
+
+  .skills {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .projects {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .logopage {
+    max-width: 100%; /* Adjust max-width for smaller screens */
+  }
 }
+/* Media Queries end */
