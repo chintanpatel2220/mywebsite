@@ -221,9 +221,8 @@ body {
 /* projects pages */
 .projects {
   margin-bottom: 24px;
-  background-color: #f8f9fa; /* Change background color */
+  background-color: #656d75; /* Change background color */
   padding: 20px; /* Add padding for spacing */
-  border-radius: 10px; /* Add border radius for style */
   text-align: center; /* Center align content */
 }
 
