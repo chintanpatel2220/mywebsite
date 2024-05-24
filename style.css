@@ -2,7 +2,7 @@
 
 /*** Variables ***/
 :root {
-  --font-family: "Roboto", sans-serf;
+  --font-family: "Roboto", sans-serif;
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
@@ -15,6 +15,7 @@
   --bottom-margin-2: 1rem;
   --line-height: 1.7rem;
   --transition: 0.3s;
+  --base-font-size: 16px;
 }
 
 /*** Variables end ****/
@@ -27,7 +28,7 @@
 }
 
 .container p {
-  font-size: 50px;
+  font-size: 3vw; /* Responsive font size */
 }
 
 .container {
@@ -119,6 +120,7 @@ a:hover {
 
 body {
   font-family: var(--font-family);
+  font-size: var(--base-font-size);
 }
 
 /* section {
@@ -154,11 +156,13 @@ body {
 
 .bio h1 {
   margin-bottom: var(--bottom-margin);
+  font-size: 2rem; /* Responsive font size */
 }
 
 .bio p {
   line-height: var(--line-height);
   padding: 0.3rem 0;
+  font-size: 1rem; /* Responsive font size */
 }
 /* Hero section ends */
 
@@ -171,11 +175,13 @@ body {
 .more-about h2 {
   margin-bottom: var(--bottom-margin);
   text-align: center;
+  font-size: 2rem; /* Responsive font size */
 }
 
 .more-about p {
   line-height: var(--line-height);
   padding: 0.4rem;
+  font-size: 1rem; /* Responsive font size */
 }
 /* More about ends */
 
@@ -191,6 +197,7 @@ body {
 
 .skill-header {
   margin-bottom: 1rem;
+  font-size: 2rem; /* Responsive font size */
 }
 
 .skills-wrapper img {
@@ -202,7 +209,6 @@ body {
   height: 6.25rem;
 }
 /* Skills section ends */
-
 
 /* Social buttons */
 .socials {
@@ -254,7 +260,6 @@ body {
 }
 /* projects pages */
 
-
 /* Footer section */
 footer {
   background-color: var(--bg-color);
@@ -266,6 +271,30 @@ footer {
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
+  .container p {
+    font-size: 6vw; /* Adjust font size for smaller screens */
+  }
+
+  .bio h1 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .bio p {
+    font-size: 0.875rem; /* Adjust font size for smaller screens */
+  }
+
+  .more-about h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .more-about p {
+    font-size: 0.875rem; /* Adjust font size for smaller screens */
+  }
+
+  .skill-header {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
   .hero {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -296,6 +325,34 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
+  .container p {
+    font-size: 4vw; /* Adjust font size for smaller screens */
+  }
+
+  .hi {
+    width: 6vw;
+  }
+
+  .bio h1 {
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+  }
+
+  .bio p {
+    font-size: 0.75rem; /* Adjust font size for smaller screens */
+  }
+
+  .more-about h2 {
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+  }
+
+  .more-about p {
+    font-size: 0.75rem; /* Adjust font size for smaller screens */
+  }
+
+  .skill-header {
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+  }
+
   .hero {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;

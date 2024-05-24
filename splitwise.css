@@ -185,3 +185,8 @@ html {
     max-width: 150px;
     align-items: center;
   }
+
+  #balance {
+    color: white;
+    text-align: center;
+  }
