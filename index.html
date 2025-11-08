@@ -4,88 +4,342 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="stylesheet" 
-          type='text/css' 
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
 
-    <!--CSS Styles -->
-    <link rel="stylesheet" href="/css/style.css" />
-    <!-- Favicons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/icons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="logo.png"
-    />
-    <!-- Animate CSS CDN -->
-    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <title>Chintan Patel | Web Developer</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png" />
+
+    <title>Chintan Patel | Payroll Technician</title>
   </head>
-
-  <!--front page html-->
   <body>
-    <div class="container" id="container">
-      <div class="logo-container">
-        <img src="/images/logo.png" alt="Logo" class="logopage">
+    <header class="site-header" id="top">
+      <div class="nav-container">
+        <a class="brand" href="#top">Chintan Patel</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="nav-toggle-bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+        <nav class="site-nav" id="primary-navigation">
+          <ul>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="text-container">
-        <div class="text-left">
-          <p>Hi <img src="/images/hi.png" class="hi"></p>
-          <p>It's me, Chintan</p>
-        </div>
-        <div class="text-right">
-          <p>A Passionate</p>
-          <p>Website Developer</p>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Social accounts - Fixed to the right -->
-    <div class="socials">
-      <a href="https://m.facebook.com/chintan.patel.92102564" target="_blank"
-        ><img
-          src="/images/facebook.png"
-          alt="Facebook"
-          loading="lazy"
-          class="socicon"
-      /></a>
-      <a href="https://www.instagram.com/chintanpatelll?ig_shid=buz00dh91slf" target="_blank"
-        ><img
-          src="/images/instagram.png"
-          alt="Instagram"
-          loading="lazy"
-          class="socicon"
-      /></a>
-    </div>
+    </header>
 
-    <!-- Footer section -->
-    <footer>
-      <p class="copy">&copy; Copyright <script type="text/javascript">document. write( new Date(). getFullYear() );</script></p>
-      <p class="copy">Built with &#x2661; by
-        <a href="./index.html" target="_blank">Chintan Patel</a>
-      </p>
+    <main>
+      <section class="hero" id="profile" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="hero-eyebrow">Payroll Technician | HR Solutions (Mar 2025 &ndash; Present)</p>
+            <h1 id="hero-title">Chintan Patel</h1>
+            <p class="hero-summary">
+              Detail-oriented payroll technician with 5+ years of experience managing payroll for over
+              2,000 employees. I ensure HMRC compliance, deliver precise RTI submissions, and build
+              streamlined payroll operations that support business growth and employee trust.
+            </p>
+            <div class="hero-meta">
+              <div class="meta-item">
+                <span class="meta-label">Location</span>
+                <span class="meta-value">Northampton, Northamptonshire, UK</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Current focus</span>
+                <span class="meta-value">Driving payroll excellence at HR Solutions</span>
+              </div>
+            </div>
+            <div class="hero-actions">
+              <a class="btn primary" href="mailto:guru.work@icloud.com?subject=Payroll%20Support%20Enquiry">Connect via email</a>
+              <a class="btn ghost" href="#experience">View experience</a>
+            </div>
+            <div class="hero-stats" aria-label="Career highlights">
+              <div class="stat-card">
+                <span class="stat-value">2,000+</span>
+                <span class="stat-label">employees supported across complex payrolls</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">100%</span>
+                <span class="stat-label">on-time RTI &amp; year-end submissions</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">£12M+</span>
+                <span class="stat-label">annual payroll value processed with zero penalties</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-profile" aria-label="Professional snapshot">
+            <div class="hero-portrait">
+              <img src="images/chintan.jpeg" alt="Chintan Patel, Payroll Technician" />
+            </div>
+            <div class="hero-contact-card">
+              <p>
+                I specialise in payroll compliance, reconciliation, and employee support across PAYE, NI,
+                SMP, SSP, and pension schemes such as Nest and Smart Pension.
+              </p>
+              <ul class="contact-list">
+                <li>
+                  <span>Email</span>
+                  <a href="mailto:guru.work@icloud.com">guru.work@icloud.com</a>
+                </li>
+              </ul>
+            </div>
+            <div class="hero-socials" aria-label="Social media profiles">
+              <a class="social-link" href="https://www.linkedin.com/in/chintanpatel" target="_blank" rel="noreferrer">
+                <span class="sr-only">LinkedIn</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path
+                    d="M20.45 20.45h-3.55v-5.62c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.72H9.32V9.56h3.41v1.48h.05c.47-.9 1.62-1.86 3.34-1.86 3.57 0 4.23 2.35 4.23 5.4v5.87zM5.34 8.08a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.57V9.56h3.54v10.89z"
+                  />
+                </svg>
+              </a>
+              <a class="social-link" href="https://www.instagram.com/chintanpatel" target="_blank" rel="noreferrer">
+                <span class="sr-only">Instagram</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path
+                    d="M12 7.34A4.66 4.66 0 1 0 16.66 12 4.65 4.65 0 0 0 12 7.34zm0 7.68A3.02 3.02 0 1 1 15.02 12 3.02 3.02 0 0 1 12 15.02zm5.88-7.9a1.09 1.09 0 1 1-1.09-1.09 1.09 1.09 0 0 1 1.09 1.09z"
+                  />
+                  <path
+                    d="M12 2.64c-3.14 0-3.52 0-4.75.07a6.18 6.18 0 0 0-2.06.39 4.26 4.26 0 0 0-1.54 1A4.26 4.26 0 0 0 2.64 5.6a6.18 6.18 0 0 0-.39 2.06C2.19 8.89 2.19 9.27 2.19 12s0 3.11.06 4.34a6.18 6.18 0 0 0 .39 2.06 4.26 4.26 0 0 0 1 1.54 4.26 4.26 0 0 0 1.54 1 6.18 6.18 0 0 0 2.06.39c1.23.06 1.61.06 4.75.06s3.52 0 4.75-.06a6.18 6.18 0 0 0 2.06-.39 4.26 4.26 0 0 0 1.54-1 4.26 4.26 0 0 0 1-1.54 6.18 6.18 0 0 0 .39-2.06c.06-1.23.06-1.61.06-4.75s0-3.52-.06-4.75a6.18 6.18 0 0 0-.39-2.06 4.26 4.26 0 0 0-1-1.54 4.26 4.26 0 0 0-1.54-1 6.18 6.18 0 0 0-2.06-.39C15.52 2.7 15.14 2.7 12 2.7zm0-1.64c3.21 0 3.6 0 4.86.07a7.79 7.79 0 0 1 2.53.49A5.9 5.9 0 0 1 21.8 3.5a5.9 5.9 0 0 1 1 1.39 7.79 7.79 0 0 1 .49 2.53c.07 1.26.07 1.65.07 4.86s0 3.6-.07 4.86a7.79 7.79 0 0 1-.49 2.53 5.9 5.9 0 0 1-1 1.39 5.9 5.9 0 0 1-1.39 1 7.79 7.79 0 0 1-2.53.49c-1.26.07-1.65.07-4.86.07s-3.6 0-4.86-.07a7.79 7.79 0 0 1-2.53-.49 5.9 5.9 0 0 1-1.39-1 5.9 5.9 0 0 1-1-1.39 7.79 7.79 0 0 1-.49-2.53C2.7 15.6 2.7 15.21 2.7 12s0-3.6.07-4.86a7.79 7.79 0 0 1 .49-2.53 5.9 5.9 0 0 1 1-1.39 5.9 5.9 0 0 1 1.39-1 7.79 7.79 0 0 1 2.53-.49C8.4 2.7 8.79 2.7 12 2.7z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section summary" aria-labelledby="summary-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Professional summary</span>
+            <h2 id="summary-title">Trusted partner for compliant, people-centred payroll</h2>
+            <p>
+              I am dedicated to leveraging payroll expertise to optimise operations, protect compliance,
+              and deliver responsive support. From RTI submissions to pension auto-enrolment and complex
+              query resolution, I combine analytical rigour with empathetic service.
+            </p>
+          </div>
+          <div class="summary-grid">
+            <article class="info-card">
+              <h3>Core Skills</h3>
+              <ul>
+                <li>End-to-end UK payroll lifecycle ownership for salaried and hourly teams</li>
+                <li>Complex adjustments covering statutory leave, pension enrolment, and benefits</li>
+                <li>Payroll variance analysis and reconciliation for multi-entity clients</li>
+                <li>Stakeholder reporting with actionable insights for finance and leadership</li>
+                <li>Confidential employee support rooted in accuracy and empathy</li>
+              </ul>
+            </article>
+            <article class="info-card">
+              <h3>Soft Skills</h3>
+              <ul>
+                <li>Problem-solving &amp; customer support</li>
+                <li>Team collaboration &amp; knowledge sharing</li>
+                <li>Client relationship building</li>
+                <li>Change readiness &amp; continuous improvement</li>
+              </ul>
+            </article>
+            <article class="info-card">
+              <h3>Technical Toolkit</h3>
+              <ul>
+                <li>Sage 50cloud Payroll, Sage Business Cloud, MoneySoft, BrightPay</li>
+                <li>Microsoft Excel (VLOOKUP, Pivot Tables)</li>
+                <li>Microsoft Word &amp; Outlook</li>
+                <li>HMRC RTI submissions, FPS/EPS filings, Government Gateway management</li>
+                <li>Payroll compliance tools: Nest, Smart Pension, People&rsquo;s Pension, HMRC Basic PAYE Tools</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section skills" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Extended skillset</span>
+            <h2 id="skills-title">Technical mindset shaped by computer science</h2>
+            <p>
+              Alongside payroll mastery, I bring the perspective of a computer science graduate with hands-on
+              web development experience. I build lightweight tools, dashboards, and automations that make
+              payroll data easier to understand for finance leaders and employees alike.
+            </p>
+          </div>
+          <div class="skills-grid">
+            <article class="info-card">
+              <h3>Web development strengths</h3>
+              <ul>
+                <li>Responsive interface design using HTML5, CSS, and accessibility-first practices</li>
+                <li>Interactive dashboards powered by JavaScript and payroll data integrations</li>
+                <li>Version-controlled collaboration with Git and GitHub</li>
+                <li>Automation of routine payroll tasks with Python scripts and APIs</li>
+              </ul>
+            </article>
+            <article class="info-card">
+              <h3>How it supports payroll</h3>
+              <ul>
+                <li>Transforms raw payroll outputs into stakeholder-ready insights</li>
+                <li>Connects payroll systems with HRIS and finance tools through secure data handling</li>
+                <li>Creates knowledge bases and self-service resources for employee confidence</li>
+                <li>Continuously experiments with technology to improve payroll accuracy and speed</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section achievements" aria-labelledby="achievements-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Key achievements</span>
+            <h2 id="achievements-title">Delivering measurable impact across payroll operations</h2>
+          </div>
+          <div class="achievement-grid">
+            <article class="achievement-card">
+              <h3>Enterprise payroll accuracy</h3>
+              <p>
+                Managed multi-industry payroll cycles for 2,000+ employees with 100% on-time completion and
+                zero compliance breaches.
+              </p>
+            </article>
+            <article class="achievement-card">
+              <h3>Responsive employee care</h3>
+              <p>
+                Reduced payroll query resolution time by 20%, building employee trust through quick,
+                empathetic support.
+              </p>
+            </article>
+            <article class="achievement-card">
+              <h3>Reliable year-end delivery</h3>
+              <p>
+                Streamlined P60 and P11D processes, ensuring accurate submissions and audit-ready
+                documentation every cycle.
+              </p>
+            </article>
+            <article class="achievement-card">
+              <h3>Payroll intelligence automation</h3>
+              <p>
+                Introduced Sage-driven automation to reduce manual reconciliations by 15% and deliver
+                proactive compliance alerts before deadlines.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experience" id="experience" aria-labelledby="experience-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Experience</span>
+            <h2 id="experience-title">Career journey</h2>
+            <p>
+              A blend of payroll leadership and technical support roles that sharpen compliance expertise
+              and service excellence.
+            </p>
+          </div>
+          <ol class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <header class="timeline-header">
+                  <h3>Payroll Technician</h3>
+                  <p>HR Solutions &bull; March 2025 &ndash; Present</p>
+                </header>
+                <ul>
+                  <li>Manage payroll processing across multiple industries with 100% accuracy and on-time delivery.</li>
+                  <li>Ensure full compliance with HMRC regulations, including RTI submissions and Nest pension auto-enrolment.</li>
+                  <li>Improve payroll query resolution times by 20% through empathetic communication and robust tracking.</li>
+                  <li>Optimise year-end payroll (P60, P11D) to deliver audit-ready reporting and submission accuracy.</li>
+                  <li>Implement data management enhancements to reduce tax code and personal data errors.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <header class="timeline-header">
+                  <h3>Payroll Administrator</h3>
+                  <p>S R Patel &amp; Co, London &bull; September 2019 &ndash; January 2025</p>
+                </header>
+                <ul>
+                  <li>Processed weekly and monthly payroll cycles, balancing RTI submissions and pension duties for SMEs.</li>
+                  <li>Maintained Sage payroll records, ensuring precise tax code, NI, and statutory payment updates.</li>
+                  <li>Collaborated with accountants to reconcile payroll journals and deliver timely management reports.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section education" id="education" aria-labelledby="education-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Growth &amp; learning</span>
+            <h2 id="education-title">Education &amp; continuous development</h2>
+          </div>
+          <div class="education-grid">
+            <article class="info-card">
+              <h3>Education</h3>
+              <p class="education-role">BSc (Hons) Computer Science</p>
+              <p class="education-meta">University of West London &bull; 2019 &ndash; 2022</p>
+              <ul>
+                <li>Specialised in database management, data structures, and Python development.</li>
+                <li>Completed coursework in information security, enterprise systems, and project management.</li>
+              </ul>
+            </article>
+            <article class="info-card">
+              <h3>Languages &amp; Interests</h3>
+              <ul>
+                <li>Languages: English (Fluent), Gujarati (Fluent), Hindi (Fluent)</li>
+                <li>Interests: Community volunteering, technology meetups, travel</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="contact-card">
+            <div class="contact-copy">
+              <span class="eyebrow">Contact</span>
+              <h2 id="contact-title">Let&rsquo;s strengthen your payroll operations</h2>
+              <p>
+                I&rsquo;m available to discuss payroll transformation, system migrations, or interim leadership
+                support. Reach out and I&rsquo;ll respond within one business day.
+              </p>
+            </div>
+            <ul class="contact-details">
+              <li>
+                <span>Email</span>
+                <a href="mailto:guru.work@icloud.com">guru.work@icloud.com</a>
+              </li>
+              <li>
+                <span>Location</span>
+                Northampton &amp; London, UK (Hybrid &amp; Remote)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Chintan Patel. All rights reserved.</p>
     </footer>
 
-    <!-- Website scripts -->
-    <script src="/js/index.js"></script>
-
-    <!-- Ion icons scripts -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
